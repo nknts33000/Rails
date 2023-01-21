@@ -48,6 +48,10 @@ gem "bootsnap", require: false
 #Use Bootstrap library
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
+gem 'bootstrap_form'
+
+#use devise authentication
+gem 'devise'
 
 #Bootstrap JavaScript is dependent on jQuery library!
 gem 'jquery-rails'
