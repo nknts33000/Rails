@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
     if ($(".single-post-card").length) {
         // set a solid background color style
         if (mode == 1) {
@@ -43,6 +43,11 @@ function randomColorSet() {
     return randomSet[Math.floor(Math.random() * randomSet.length )];
 }
 
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").hide();
+    });
+});
 // Randomly returns a color from an array of colors
 function randomColor() {
     var color = colorSet[Math.floor(Math.random() * colorSet.length)];

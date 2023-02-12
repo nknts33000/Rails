@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Telikh</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>MyInterests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+
+  <%= csrf_meta_tags %>
+  <% if !Rails.env.test? %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+  <% end %>
 
-  <body>
-    <%= render 'layouts/navigation' %>
-    <%= yield %>
-  </body>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<%= render 'layouts/navigation' %>
+<%= yield %>
+
+</body>
 </html>
