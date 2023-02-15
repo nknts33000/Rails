@@ -22,6 +22,16 @@ class Private::ConversationsController < ApplicationController
         def already_added?
   		session[:private_conversations].include?(@conversation.id)
 	end
+	
+	def close
+  		@conversation_id = params[:id].to_i
+  		session[:private_conversations].delete(@conversation_id)
+
+  		respond_to do |format|
+    			format.js
+  		end
+	end
+	
 
 	private
 
