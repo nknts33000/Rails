@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() { 
+$(document).ready(function() { 
 
     // when conversation heading is clicked, toggle conversation
     $('body').on('click', 

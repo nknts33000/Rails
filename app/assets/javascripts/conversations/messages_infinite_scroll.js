@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load ajax:complete', function() {
+$(document).ready(function() {
     var iScrollPos = 0;
     var isLoading = false;
     var currentLoadingIcon;
