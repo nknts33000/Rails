@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready( function() {
     var iScrollPos = 0;
     var isLoading = false;
     var currentLoadingIcon;

@@ -9,3 +9,4 @@ $(document).on('submit', '.send-private-message', function(e) {
     App.private_conversation.send_message(values);
     $(this).trigger('reset');
 });
+
