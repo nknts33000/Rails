@@ -8,3 +8,4 @@ import "controllers"
 //= require turbolinks
 //= require posts/style
 //= require_tree .
+import "channels"
