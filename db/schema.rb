@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_19_120111) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_20_002048) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "branch"
@@ -25,6 +25,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_19_120111) do
     t.string "name"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+  end
+
+  create_table "group_conversations_users", id: false, force: :cascade do |t|
+    t.integer "conversation_id"
+    t.integer "user_id"
+    t.index ["conversation_id"], name: "index_group_conversations_users_on_conversation_id"
+    t.index ["user_id"], name: "index_group_conversations_users_on_user_id"
   end
 
   create_table "group_messages", force: :cascade do |t|
