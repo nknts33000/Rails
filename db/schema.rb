@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_18_173944) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_19_120111) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "branch"
@@ -19,6 +19,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_18_173944) do
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "group_conversations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+  end
+
+  create_table "group_messages", force: :cascade do |t|
+    t.string "content"
+    t.string "added_new_users"
+    t.string "seen_by"
+    t.integer "user_id"
+    t.integer "conversation_id"
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.index ["conversation_id"], name: "index_group_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_group_messages_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
