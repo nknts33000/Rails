@@ -1,19 +1,13 @@
 <% branch_path_name = "#{params[:action]}_posts_path" %>
-
-<% puts(branch_path_name) %>
 <div class="col-sm-12">
   <ul class="categories-list">
-
-   <%# @category.each do |category| %>
+    <%= render all_categories_button_partial_path, 
+               branch_path_name: branch_path_name %>
+    <% @categories.each do |category| %>
       <li class="category-item">
-        <%= render all_categories_button,
-                   branch_path_name: branch_path_name %>
-        <% @categories.each do |category| %>
-      <li class="category-item">
-        <%= link_to category.name,
-                    send(branch_path_name, category: category.name),
+        <%= link_to category.name, 
+                    send(branch_path_name, category: category.name), 
                     :class => ("selected-item" if params[:category] == category.name) %>
-      </li>
       </li>
     <% end %>
   </ul>

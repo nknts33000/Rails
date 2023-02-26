@@ -120,7 +120,6 @@ GEM
     faker (3.1.1)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
-    ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.1.0)
       activesupport (>= 5.0)
     gon (6.4.0)
@@ -287,6 +286,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2022.7)
+      tzinfo (>= 1.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -344,7 +345,7 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 RUBY VERSION
-   ruby 3.0.4p208
+   ruby 3.2.1p31
 
 BUNDLED WITH
    2.4.1

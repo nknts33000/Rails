@@ -8,4 +8,3 @@ module MessengersHelper
     end
   end
 end
-

@@ -11,3 +11,4 @@ class CreatePrivateConversations < ActiveRecord::Migration[5.1]
     add_index :private_conversations, [:recipient_id, :sender_id], unique: true
   end
 end
+

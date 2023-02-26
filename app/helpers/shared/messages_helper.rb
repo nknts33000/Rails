@@ -1,6 +1,14 @@
 module Shared::MessagesHelper
 
-  
+  def append_previous_messages_partial_path
+    # if a conversation is opened in the messenger
+    if @is_messenger == 'true'
+      'shared/load_more_messages/messenger/append_messages' 
+    else 
+      'shared/load_more_messages/window/append_messages' 
+    end 
+  end
+
   # if there are no previous messages
   def remove_link_to_messages
     if @is_messenger == 'false'
@@ -20,31 +28,14 @@ module Shared::MessagesHelper
       # if previous messages exist, load them
       if @messages_to_display_offset != 0
         'shared/load_more_messages/messenger/load_previous_messages'
-      else
-        # remove load previous messages link
+      else 
+        # remove load previous messages link 
         'shared/load_more_messages/messenger/remove_previous_messages_link'
-      end
+      end 
     else
       'shared/empty_partial'
     end
   end
 
-  def append_previous_messages_partial_path
-    # if a conversation is opened in the messenger
-    if @is_messenger == 'true'
-      'shared/load_more_messages/messenger/append_messages'
-    else
-      'shared/load_more_messages/window/append_messages'
-    end
-  end
-
-  def replace_link_to_private_messages_partial_path
-    if @is_messenger == 'true'
-      'private/messages/load_more_messages/messenger/replace_link_to_messages'
-    else
-      'private/messages/load_more_messages/window/replace_link_to_messages'
-    end
-  end
-
-
 end
+
